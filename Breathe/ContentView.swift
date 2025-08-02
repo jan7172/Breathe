@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  Breathe
+//
+//  Created by Jan Bauer on 02.08.25.
+//
+
 import SwiftUI
 
 struct ContentView: View {
