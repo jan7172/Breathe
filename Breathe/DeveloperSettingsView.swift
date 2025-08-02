@@ -1,3 +1,10 @@
+//
+//  DeveloperSettingsView.swift
+//  Breathe
+//
+//  Created by Jan Bauer on 02.08.25.
+//
+
 import SwiftUI
 
 struct DeveloperSettingsView: View {
@@ -16,7 +23,7 @@ struct DeveloperSettingsView: View {
                 Section {
                     Button(role: .destructive) {
                         BreatheApp.resetAllUsageLimits()
-                        totalUsageToday = 0 // Sofort im UI
+                        totalUsageToday = 0
                         forceLimitReached = false
                     } label: {
                         Text("Täglichen Nutzungszähler zurücksetzen")

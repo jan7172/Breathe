@@ -1,3 +1,10 @@
+//
+//  BreatheApp.swift
+//  Breathe
+//
+//  Created by Jan Bauer on 02.08.25.
+//
+
 import SwiftUI
 
 @main
@@ -13,7 +20,6 @@ struct BreatheApp: App {
     @AppStorage("lastUsageReset") var lastUsageReset: Double = Date().timeIntervalSince1970
     @AppStorage("forceLimitReached") var forceLimitReached: Bool = false
     
-    // Neue Intervall-Sperre
     @AppStorage("intervalBlockEnabled") var intervalBlockEnabled: Bool = false
     @AppStorage("intervalMinutes") var intervalMinutes: Int = 5
     @AppStorage("lastOpenTime") var lastOpenTime: Double = 0
@@ -70,13 +76,11 @@ struct BreatheApp: App {
         if intervalBlockEnabled {
             let timeSinceLastOpen = now - lastOpenTime
             if timeSinceLastOpen < Double(intervalMinutes * 60) && lastOpenTime > 0 {
-                // Noch innerhalb des Intervalls → normal öffnen
                 openTargetApp(app)
                 return
             }
         }
         
-        // Zeit ist abgelaufen oder Intervall-Sperre aus → Aufgabe zeigen
         targetApp = app
     }
     

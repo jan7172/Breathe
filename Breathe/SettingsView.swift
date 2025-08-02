@@ -1,3 +1,10 @@
+//
+//  SettingsView.swift
+//  Breathe
+//
+//  Created by Jan Bauer on 02.08.25.
+//
+
 import SwiftUI
 
 struct SettingsView: View {
@@ -5,7 +12,6 @@ struct SettingsView: View {
     @AppStorage("appearanceMode") var appearanceMode: String = "system"
     @AppStorage("dailyLimitMinutes") var dailyLimitMinutes: Int = 5
     
-    // Neue Intervall-Optionen
     @AppStorage("intervalBlockEnabled") var intervalBlockEnabled: Bool = false
     @AppStorage("intervalMinutes") var intervalMinutes: Int = 5
     
@@ -64,7 +70,6 @@ struct SettingsView: View {
                         }
                     }
                     
-                    // Neue Intervall-Sperre
                     settingsCard {
                         VStack(alignment: .leading, spacing: 12) {
                             Toggle("Intervall-Mathe-Sperre aktivieren", isOn: $intervalBlockEnabled)

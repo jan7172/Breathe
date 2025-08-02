@@ -20,14 +20,12 @@ struct ContentView: View {
             app.color.ignoresSafeArea()
             
             VStack(spacing: 20) {
-                // Öffnungszähler
                 Text("Du hast \(app.displayName) in den letzten 24 h \(openCount)× geöffnet.")
                     .font(.headline)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
                 
-                // Limit-Info
                 if limitReached {
                     Text("Tageslimit von \(dailyLimitMinutes) Min erreicht")
                         .font(.headline)
@@ -40,7 +38,6 @@ struct ContentView: View {
                         .padding(.top, 10)
                 }
                 
-                // Button
                 Button(action: {
                     if remainingTime <= 0 && !limitReached {
                         onAppOpen()
